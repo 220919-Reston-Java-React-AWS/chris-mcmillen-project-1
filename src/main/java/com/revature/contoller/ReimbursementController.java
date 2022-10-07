@@ -89,12 +89,8 @@ public class ReimbursementController {
             String reimburseType = ctx.pathParam("reimbursement-type");
             if (user != null) {
                 if (user.getRoleId() == 2){
-                    try {
-                        List<Reimbursement> reimbursements = reimbursementService1.getAllReimbursements(user.getUserID());
-                        ctx.json(reimbursements);
-                    } catch(EmptyListException e){
-                        ctx.result(e.getMessage());
-                    }
+                    ctx.result("You are logged in as a manager, only employees can filter by request type.");
+                    ctx.status(401);
 
                 } else if((user.getRoleId() == 1)){
                     try {
