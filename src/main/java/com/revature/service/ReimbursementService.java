@@ -14,7 +14,6 @@ public class ReimbursementService {
     public List<Reimbursement> getAllReimbursements(int userId) throws SQLException, EmptyListException {
         ReimbursementRepository reimbursement1 = new ReimbursementRepository();
         List<Reimbursement> reimbursements = reimbursement1.getAllReimbursements(userId);
-        System.out.println(reimbursements.size());
         if (reimbursements.size() == 0) {
             throw new EmptyListException("There are no reimbursements in the list.");
         }

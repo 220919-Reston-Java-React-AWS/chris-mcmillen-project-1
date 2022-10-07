@@ -60,10 +60,8 @@ public class ReimbursementRepository {
                         reimbursements.add(reimbursement);
                     }
                 }
-                return reimbursements;
-            }
+            }   return reimbursements;
         }
-        return null;
     }
     //get reimbursements for employees
     public List<Reimbursement> getReimbursementsForEmployees(int employeeId) throws SQLException{
